@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    input,textarea{
+        width: 300px;
+        height: 30px;
+        border-radius: 5px;
+    }
+    button{
+        height: 50px;
+        width: 350px;
+        background-color: rgb(86, 125, 158);
+        font-size: large;
+        border-radius: 5px;
+    }
+    button:hover{
+        background-color: rgb(65, 71, 76);
+    }
+</style>
+</head>
+<body style="background:linear-gradient(to right,rgb(137, 137, 190),rgb(232, 235, 237));background-repeat: no-repeat;height: 670px;text-align: center;font-size: 30px;">
+    <h1 style="font-size: 80px;">ADD PRODUCTS</h1><br>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br><br>
+        <label for="des">Description:</label>
+        <textarea name="des" required></textarea><br><br>
+        <label for="price">Price:</label>
+        <input type="text" name="price" required><br><br>
+        <label for="quantity">Stock_Quantity:</label>
+        <input type="text" name="quantity" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

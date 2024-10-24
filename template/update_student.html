@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Student Details</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="fname">First_Name</label>
+        <input type="text" name="fname" value="{{data.first_name}}" required><br><br>
+        <label for="lname">Last_Name</label>
+        <input type="text" name="lname" value="{{data.last_name}}" required><br><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" value="{{data.email}}" required><br><br>
+        <label for="phone">Phone_Number</label>
+        <input type="text" name="phone" value="{{data.phone_number}}" required><br><br>
+        <label for="course">Course</label>
+        <select name="course">
+            {% for x in dataa %}
+            <option value="{{x.id}}">{{x.course_name}}</option>
+            {% endfor %}
+        </select><br><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

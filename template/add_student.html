@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="fname">First_Name</label>
+        <input type="text" name="fname" required><br><br>
+        <label for="lname">Last_Name</label>
+        <input type="text" name="lname" required><br><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" required><br><br>
+        <label for="phone">Phone_Number</label>
+        <input type="text" name="phone" required><br><br>
+        <label for="course">Course</label>
+        <select name="course">
+            {% for x in data %}
+            <option value="{{x.id}}">{{x.course_name}}</option>
+            {% endfor %}
+        </select><br><br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

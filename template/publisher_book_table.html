@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Book Details</h1>
+    <table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Publication_date</th>
+            <th>ISBN</th>
+            <th>Publisher</th>
+        </tr>
+        {% for x in book %}
+        <tr>
+            <td>{{x.title}}</td>
+            <td>{{x.publication_date}}</td>
+            <td>{{x.isbn}}</td>
+            <td>{{x.publisher}}</td>
+            <td><a href="{% url 'update_book' x.id %}">Update</a></td>
+            <td><a href="{% url 'delete_book' x.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

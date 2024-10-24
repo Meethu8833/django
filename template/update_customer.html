@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Customer</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="f_name">First Name</label>
+        <input type="text" name="f_name" value="{{ update.first_name }}" required><br><br>
+        <label for="l_name">Last Name</label>
+        <input type="text" name="l_name" value="{{ update.last_name }}" required><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" value="{{ update.email }}" required><br><br>
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" value="{{ update.phone_number }}" required><br><br>
+        <label for="address">Address</label>
+        <input type="text" name="address" value="{{ update.address }}" required><br><br>
+        <label for="dob">Date Of Birth</label>
+        <input type="date" name="dob" value="{{ update.date_of_birth|date:'Y-m-d' }}" required><br><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

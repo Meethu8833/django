@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update Event</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title">Title</label>
+        <input type="text" name="title" value="{{obj.title}}" required><br><br>
+        <label for="date">Date</label>
+        <input type="date" name="date" value="{{obj.date|date:'Y-m-d'}}" required><br><br>
+        <label for="location">Location</label>
+        <input type="text" name="location" value="{{obj.location}}" required><br><br>
+        <label for="org">Organizer</label>
+        <select name="org">
+            {% for x in organize %}
+            <option value="{{x.id}}">{{x.name}}</option>
+            {% endfor %}
+        </select><br><br>
+        <button type="submit">Update Event</button>
+    </form>
+</body>
+</html>

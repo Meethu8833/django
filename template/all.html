@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>user_id</th>
+            <th>user_name</th>
+            <th>user_age</th>
+            <th>date</th>
+        </tr>
+        {% for x in data1 %}
+        <tr>
+            <td>{{x.user_id}}</td>
+            <td>{{x.user_name}}</td>
+            <td>{{x.user_age}}</td>
+            <td>{{x.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

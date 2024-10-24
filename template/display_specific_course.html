@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{cc.course_name}}</h1>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+        {% for x in dataa %}
+        <tr>
+            <td>{{x.first_name}}</td>
+            <td>{{x.last_name}}</td>
+            <td>{{x.email}}</td>
+            <td>{{x.phone_number}}</td>
+        </tr>
+        {% endfor %}
+    </table><br><br>
+    <a href="{% url 'displayCourses' %}">Back</a>
+</body>
+</html>

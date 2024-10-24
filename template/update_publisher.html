@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" name="name" value="{{dataa.name}}" required><br><br>
+        <label for="address">Address</label>
+        <input type="text" name="address" value="{{dataa.address}}" required><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" value="{{dataa.email}}" required><br><br>
+        </select>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
